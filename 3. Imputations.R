@@ -3,6 +3,10 @@
 Fin_Co2_med <- read.csv("Data/Merge Data/CO2 Emissions(cleansed).csv")
 Fin_Energy_med <- read.csv("Data/Merge Data/Electricity Generation(cleansed).csv")
 
+# Remove the world
+Fin_Co2_med <- Fin_Co2_med[Fin_Co2_med$Country != "World", ]
+Fin_Energy_med <- Fin_Energy_med[Fin_Energy_med$Country != "World",]
+
 # Get numeric columns
 numeric_cols <- sapply(Fin_Co2_med, is.numeric)
 numeric_cols2 <- sapply(Fin_Energy_med, is.numeric)
@@ -37,6 +41,10 @@ write.csv(Fin_Energy_med, "Data/Imputed Data/Energy(Med Imp).csv", row.names = F
 # IMPUTATION 2 - Fill missing values with mean (Mean-Imputation)
 Fin_Co2_mean <- read.csv("Data/Merge Data/CO2 Emissions(cleansed).csv")
 Fin_Energy_mean <- read.csv("Data/Merge Data/Electricity Generation(cleansed).csv")
+
+# Remove the world
+Fin_Co2_mean <- Fin_Co2_mean[Fin_Co2_mean$Country != "World", ]
+Fin_Energy_mean <- Fin_Energy_mean[Fin_Energy_mean$Country != "World",]
 
 # Get numeric columns
 numeric_cols <- sapply(Fin_Co2_mean, is.numeric)
