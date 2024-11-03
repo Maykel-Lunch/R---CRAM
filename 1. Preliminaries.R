@@ -1,8 +1,8 @@
 library(dplyr)
 library(tidyr)
 library(ggplot2)
-library(reshape2)
-library(corrplot)
+library(reshape2) #function melt()
+
 
 # Load csv to the dataframe
 co2_data <- read.csv("Data/CO2 Emissions.csv", stringsAsFactors = FALSE)
